@@ -3,6 +3,7 @@ package com.example.quiz_1147;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -51,5 +52,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, R.string.incorrect_answer, Toast.LENGTH_SHORT).show();
         questionIndex = (questionIndex+1)%questions.length;
         textView.setText(questions[questionIndex].getQuestionText());
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.d("SYSTEM INFO: ", "Вызван метод onStart()");
     }
 }
